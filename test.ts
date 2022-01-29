@@ -1,1 +1,38 @@
 // Hier kann man Tests durchführen; diese Datei wird nicht kompiliert, wenn dieses Paket als Erweiterung verwendet wird.
+OLED_I2C.init(60)
+OLED_I2C.numericString_8x8(
+    3,
+    3,
+    "01234567890",
+    1
+)
+OLED_I2C.numericString_16x16(
+    5,
+    13,
+    "01234",
+    1
+)
+OLED_I2C.numericString_16x24(
+    0,
+    34,
+    "479",
+    1
+)
+OLED_I2C.draw()
+loops.everyInterval(500, function () {
+    OLED_I2C.numericString_32x40(
+        0,
+        12,
+        "5312",
+        1
+    )
+    OLED_I2C.draw()
+    basic.pause(500)
+    OLED_I2C.numericString_32x40(
+        0,
+        12,
+        "7994",
+        1
+    )
+    OLED_I2C.draw()
+})

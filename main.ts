@@ -1,17 +1,37 @@
 OLED_I2C.init(60)
-for (let Index = 0; Index <= 32; Index++) {
-    OLED_I2C.pixel(32 + Index, Index, 1)
-}
-OLED_I2C.showString(
+OLED_I2C.numericString_8x8(
+3,
+3,
+"01234567890",
+1
+)
+OLED_I2C.numericString_16x16(
 5,
-2,
-"Hello!",
+13,
+"01234",
+1
+)
+OLED_I2C.numericString_16x24(
+0,
+34,
+"479",
 1
 )
 OLED_I2C.draw()
-OLED_I2C.numericString_8x8(
-0,
-0,
-"Hello!",
-1
-)
+loops.everyInterval(500, function () {
+    OLED_I2C.numericString_32x40(
+    0,
+    12,
+    "5312",
+    1
+    )
+    OLED_I2C.draw()
+    basic.pause(500)
+    OLED_I2C.numericString_32x40(
+    0,
+    12,
+    "7994",
+    1
+    )
+    OLED_I2C.draw()
+})

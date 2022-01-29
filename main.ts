@@ -9,3 +9,9 @@ OLED_I2C.showString(
 1
 )
 OLED_I2C.draw()
+OLED_I2C.numericString_8x8(
+0,
+0,
+"Hello!",
+1
+)

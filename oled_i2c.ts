@@ -242,7 +242,18 @@ namespace OLED_I2C {
         */
     }
 
-    export function 
+    /**
+     * show numeric string in OLED
+     * @param x top left x address of start
+     * @param y top left y address of start
+     * @param s is the text will be show, eg: 'Hello!'
+     * @param color is string color, eg: 1
+     */
+    //% blockId="OLED_I2C_NUMBERSTRING_8x8" block="show numeric string with 8x8 font at x %x|y %y|text %s|color %color"
+    //% weight=80 blockGap=8
+    //% parts=OLED_I2C trackArgs=0
+    export function numericString_8x8(x: number, y: number, s: string, color: number = 1) {
+    }
 
     /**
      * draw a horizontal line

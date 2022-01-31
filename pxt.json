@@ -10,7 +10,12 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "oled_i2c.ts"
+        "oled_i2c.ts",
+        "font_8x8.ts",
+        "font_16x16.ts",
+        "font_16x24.ts",
+        "font_24x32.ts",
+        "font_32x40.ts"
     ],
     "testFiles": [
         "test.ts"

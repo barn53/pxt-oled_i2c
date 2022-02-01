@@ -33,73 +33,73 @@ namespace OLED_I2C {
     }
 
     /**
-     * show numeric string in OLED
+     * show numeber in OLED
      * @param x top left x address of start
      * @param y top left y address of start
-     * @param s is the text will be show, eg: '1234567890'
+     * @param n is the number will be show, eg: 1234567890
      * @param color is string color, eg: 1
      */
-    //% blockId="OLED_I2C_NUMERICSTRING_8x8" block="show numeric string with 8x8 font at x %x|y %y|text %s|color %color"
+    //% blockId="OLED_I2C_NUMERICSTRING_8x8" block="show numeber with 8x8 font at x %x|y %y|text %s|color %color"
     //% weight=80 blockGap=8
     //% parts=OLED_I2C trackArgs=0
-    export function numericString_8x8(x: number, y: number, s: string, color: number = 1) {
-        numericString(x, y, s, numericFont_8x8, 8, 8, color)
+    export function number_8x8(x: number, y: number, n: number, color: number = 1) {
+        showString(x, y, n.toString(), numericFont_8x8, 8, 8, color)
     }
 
     /**
-     * show numeric string in OLED
+     * show numeber in OLED
      * @param x top left x address of start
      * @param y top left y address of start
-     * @param s is the text will be show, eg: '1234567890'
+     * @param n is the number will be show, eg: 1234567890
      * @param color is string color, eg: 1
      */
-    //% blockId="OLED_I2C_NUMERICSTRING_16x16" block="show numeric string with 16x16 font at x %x|y %y|text %s|color %color"
+    //% blockId="OLED_I2C_NUMERICSTRING_16x16" block="show numeber with 16x16 font at x %x|y %y|text %s|color %color"
     //% weight=80 blockGap=8
     //% parts=OLED_I2C trackArgs=0
-    export function numericString_16x16(x: number, y: number, s: string, color: number = 1) {
-        numericString(x, y, s, numericFont_16x16, 16, 16, color)
+    export function number_16x16(x: number, y: number, n: number, color: number = 1) {
+        showString(x, y, n.toString(), numericFont_16x16, 16, 16, color)
     }
 
     /**
-     * show numeric string in OLED
+     * show numeber in OLED
      * @param x top left x address of start
      * @param y top left y address of start
-     * @param s is the text will be show, eg: '1234567890'
+     * @param n is the number will be show, eg: 1234567890
      * @param color is string color, eg: 1
      */
-    //% blockId="OLED_I2C_NUMERICSTRING_16x24" block="show numeric string with 16x24 font at x %x|y %y|text %s|color %color"
+    //% blockId="OLED_I2C_NUMERICSTRING_16x24" block="show numeber with 16x24 font at x %x|y %y|text %s|color %color"
     //% weight=80 blockGap=8
     //% parts=OLED_I2C trackArgs=0
-    export function numericString_16x24(x: number, y: number, s: string, color: number = 1) {
-        numericString(x, y, s, numericFont_16x24, 16, 24, color)
+    export function number_16x24(x: number, y: number, n: number, color: number = 1) {
+        showString(x, y, n.toString(), numericFont_16x24, 16, 24, color)
     }
 
     /**
-     * show numeric string in OLED
+     * show numeber in OLED
      * @param x top left x address of start
      * @param y top left y address of start
-     * @param s is the text will be show, eg: '1234567890'
+     * @param n is the number will be show, eg: 1234567890
      * @param color is string color, eg: 1
      */
-    //% blockId="OLED_I2C_NUMERICSTRING_24x32" block="show numeric string with 24x32 font at x %x|y %y|text %s|color %color"
+    //% blockId="OLED_I2C_NUMERICSTRING_24x32" block="show numeber with 24x32 font at x %x|y %y|text %s|color %color"
     //% weight=80 blockGap=8
     //% parts=OLED_I2C trackArgs=0
-    export function numericString_24x32(x: number, y: number, s: string, color: number = 1) {
-        numericString(x, y, s, numericFont_24x32, 24, 32, color)
+    export function number_24x32(x: number, y: number, n: number, color: number = 1) {
+        showString(x, y, n.toString(), numericFont_24x32, 24, 32, color)
     }
 
     /**
-     * show numeric string in OLED
+     * show numeber in OLED
      * @param x top left x address of start
      * @param y top left y address of start
-     * @param s is the text will be show, eg: '1234567890'
+     * @param n is the number will be show, eg: 1234567890
      * @param color is string color, eg: 1
      */
-    //% blockId="OLED_I2C_NUMERICSTRING_32x40" block="show numeric string with 32x40 font at x %x|y %y|text %s|color %color"
+    //% blockId="OLED_I2C_NUMERICSTRING_32x40" block="show numeber with 32x40 font at x %x|y %y|text %s|color %color"
     //% weight=80 blockGap=8
     //% parts=OLED_I2C trackArgs=0
-    export function numericString_32x40(x: number, y: number, s: string, color: number = 1) {
-        numericString(x, y, s, numericFont_32x40, 32, 40, color)
+    export function number_32x40(x: number, y: number, n: number, color: number = 1) {
+        showString(x, y, n.toString(), numericFont_32x40, 32, 40, color)
     }
 
     /**
@@ -271,7 +271,7 @@ namespace OLED_I2C {
         cmd1(0x10 | (c >> 4)) // upper start column address    
     }
 
-    function numericString(x: number, y: number, s: string, fontBuffer: Buffer, fontWidth: number, fontHeight: number, color: number = 1) {
+    function showString(x: number, y: number, s: string, fontBuffer: Buffer, fontWidth: number, fontHeight: number, color: number = 1) {
         let byte = 0
         let byteIndex = 0
 
